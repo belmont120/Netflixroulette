@@ -1,0 +1,2 @@
+H:\Projects\XamarinNetflix\Netflixroulette\Netflixroulette\Netflixroulette.UWP\Netflixroulette.UWP.csproj;x86
+H:\Projects\XamarinNetflix\Netflixroulette\Netflixroulette\Netflixroulette\Netflixroulette.csproj;neutral

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Netflixroulette.MoviesPage"
+             Title="Movies">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="searchBar" Placeholder="Search..." 
+                       SearchButtonPressed="SearchBar_OnSearchButtonPressed" 
+                       BackgroundColor="CadetBlue"></SearchBar>
+            <ActivityIndicator IsRunning="{Binding IsSearching}"></ActivityIndicator>
+            <ListView x:Name="moviesListView" HasUnevenRows="True" IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Poster}"
+                                   Text="{Binding ShowTitle}"
+                                   Detail="{Binding ReleaseYear}"
+                                   Tapped="Cell_OnTapped"></ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="notFound" Text="No movies found matching your search" IsVisible="False"></Label>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

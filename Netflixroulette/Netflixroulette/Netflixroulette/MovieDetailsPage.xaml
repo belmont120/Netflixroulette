@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Netflixroulette.MovieDetailsPage"
+             Title="{Binding ShowTitle}">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image x:Name="posterView" Source="{Binding Poster}" Aspect="AspectFill"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=0.5}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Width,
+                        Factor=1}"
+                   ></Image>
+
+            <StackLayout HorizontalOptions="Center"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=0.9}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=posterView,
+                            Property=Height,
+                            Factor=1,
+                            Constant=10}"
+                         Padding="20, 0">
+                <Label Text="{Binding ShowTitle}" FontSize="30"></Label>
+                <Label Text="{Binding ReleaseYear}" FontSize="15" TextColor="Gray"></Label>
+                <Label Text="{Binding Summary}" FontSize="20"></Label>
+            </StackLayout>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
